@@ -40,8 +40,10 @@ bool rectangleOverlap(){
     double R2By = R2CenterY + (R2Height/2);
     double R2Cx= R2CenterX - (R2Width/2);
     double R2Cy = R2CenterY - (R2Height/2);
-
-
+// Just checking for valid input for height and width
+if (R1Height <= 0 || R1Width <= 0 || R2Height <= 0 || R2Width <= 0)
+    return false;
+//Start comparision to see if the rectangles do overlap or not
     if(R1Cx < R2Bx && R2Cx < R1Bx && R1Cy<R2By && R2Cy < R1By ){
         return true;
     }
@@ -61,9 +63,9 @@ bool rectangleOverlap(){
 
 int main() {
     if(rectangleOverlap()){
-        printf("They do Overlap!!\n");
+        printf("Rectangles do Overlap!!\n");
     }
     else
-        printf("Nope\n");
+        printf("Rectangles do not Overlap!\n");
     return 0;
 }
